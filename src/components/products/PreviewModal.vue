@@ -18,11 +18,11 @@ const { open, close } = useModal({
 const addToCart=()=>{
     const sessionProducts=JSON.parse(sessionStorage.getItem('addToCart')) || []
     if(sessionProducts.length>0){
-        sessionStorage.setItem("addToCart",JSON.stringify([...sessionProducts],props.data))
+        sessionStorage.setItem("addToCart",JSON.stringify([...sessionProducts,props.data]))
     }else{
         sessionStorage.setItem("addToCart",JSON.stringify([props.data]))
     }
-    console.log("addToCart",props.data);
+    console.log("sessionProducts",sessionStorage.getItem('addToCart'));
 }
 </script>
 
